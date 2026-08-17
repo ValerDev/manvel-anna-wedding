@@ -26,7 +26,7 @@ function updateCountdown() {
     return;
   }
 
-  countdownValues.days.textContent = String(Math.floor(remaining / 86400000)).padStart(3, "0");
+  countdownValues.days.textContent = String(Math.floor(remaining / 86400000));
   countdownValues.hours.textContent = String(Math.floor((remaining / 3600000) % 24)).padStart(2, "0");
   countdownValues.minutes.textContent = String(Math.floor((remaining / 60000) % 60)).padStart(2, "0");
   countdownValues.seconds.textContent = String(Math.floor((remaining / 1000) % 60)).padStart(2, "0");
