@@ -206,7 +206,7 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
 
 @media (max-width: 480px) {
   .hero, .music-section, .schedule, .date-section, .signature { width: calc(100% - 48px); }
-  .hero { padding-top: 8px; }
+  .hero { display: flex; min-height: 100svh; padding: 8px 0; flex-direction: column; justify-content: center; align-items: center; }
   .rings { width: min(280px, 75vw); }
   .welcome { margin-top: 20px; }
   .eyebrow { margin-bottom: 15px; font-size: .76rem; line-height: 1.3; }
