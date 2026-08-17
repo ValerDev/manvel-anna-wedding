@@ -1,6 +1,5 @@
 // Replace these three placeholder URLs with the final Yandex Maps links.
 const MAP_URLS = {
-  bride: "https://yandex.com/maps/?text=Bride%27s%20house%2C%20Armenia",
   church: "https://yandex.com/maps/?text=Saint%20Astvatsatsin%20Church%2C%20Armenia",
   restaurant: "https://yandex.com/maps/?text=Palais%20Hall%2C%20Armenia"
 };
