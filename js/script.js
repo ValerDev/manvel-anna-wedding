@@ -78,8 +78,6 @@ musicAudio.addEventListener("loadedmetadata", () => {
 musicAudio.addEventListener("durationchange", syncMusicProgress);
 musicAudio.addEventListener("timeupdate", syncMusicProgress);
 musicAudio.addEventListener("play", () => {
-  removeScrollPlayListeners();
-  audioGate.hidden = true;
   musicSection.classList.add("is-playing");
   document.querySelector('[data-music="play"]').setAttribute("aria-label", "Դադարեցնել");
 });
@@ -89,44 +87,13 @@ musicAudio.addEventListener("pause", () => {
 });
 musicAudio.addEventListener("ended", syncMusicProgress);
 
-let scrollPlayAttemptInProgress = false;
-
-function removeScrollPlayListeners() {
-  window.removeEventListener("scroll", startMusicFromScroll);
-  window.removeEventListener("wheel", startMusicFromScroll);
-  window.removeEventListener("touchstart", startMusicFromScroll);
-}
-
-function startMusicFromScroll() {
-  if (!musicAudio.paused || scrollPlayAttemptInProgress || musicAudio.readyState < 1) return;
-  if (musicAudio.currentTime < MUSIC_START_TIME) musicAudio.currentTime = MUSIC_START_TIME;
-  scrollPlayAttemptInProgress = true;
-  musicAudio.play()
-    .then(removeScrollPlayListeners)
-    .catch(() => { scrollPlayAttemptInProgress = false; });
-}
-
-window.addEventListener("scroll", startMusicFromScroll, { passive: true });
-window.addEventListener("wheel", startMusicFromScroll, { passive: true });
-window.addEventListener("touchstart", startMusicFromScroll, { passive: true });
-
-function attemptImmediatePlayback() {
-  if (!musicAudio.paused || musicAudio.readyState < 1) return;
-  if (musicAudio.currentTime < MUSIC_START_TIME) musicAudio.currentTime = MUSIC_START_TIME;
-  musicAudio.play().catch(() => { audioGate.hidden = false; });
-}
-
-musicAudio.addEventListener("canplay", attemptImmediatePlayback, { once: true });
-window.addEventListener("load", attemptImmediatePlayback, { once: true });
-attemptImmediatePlayback();
-
 openInvitationButton.addEventListener("click", () => {
   if (musicAudio.readyState >= 1 && musicAudio.currentTime < MUSIC_START_TIME) {
     musicAudio.currentTime = MUSIC_START_TIME;
   }
-  musicAudio.play()
-    .then(() => { audioGate.hidden = true; })
-    .catch(() => { audioGate.hidden = true; });
+  audioGate.classList.add("is-opening");
+  musicAudio.play().catch(() => {});
+  setTimeout(() => { audioGate.hidden = true; }, 1200);
 });
 
 document.querySelectorAll("[data-music]").forEach((button) => {
