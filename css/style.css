@@ -232,8 +232,8 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
   .countdown-grid strong { font-size: clamp(1.45rem, 7vw, 1.9rem); }
   .countdown-grid span { font-size: .62rem; }
   .years-later { margin-top: 30px; font-size: 20px; }
-  .couple-wrap { display: block; width: 100%; line-height: 0; }
-  .couple { width: calc(100% + 64px); max-width: none; margin: 18px 0 0 -32px; }
+  .couple-wrap { display: block; width: calc(100vw - 32px); margin-left: calc(50% - 50vw + 16px); line-height: 0; }
+  .couple { width: 100%; max-width: none; margin: 18px auto 0; }
 }
 
 @media (max-width: 360px) {
