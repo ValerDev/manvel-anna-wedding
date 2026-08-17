@@ -61,7 +61,7 @@ main { width: 100%; }
 .heading-heart-divider::before, .heading-heart-divider::after { content: ""; height: 1px; flex: 1; background: rgba(200,170,150,.58); }
 .invitation { max-width: 670px; margin: 0 auto 30px; color: var(--sage); font-size: clamp(1rem, 1.8vw, 1.32rem); font-weight: 300; line-height: 1.8; }
 .gift { max-width: 720px; margin: 0 auto; color: #4b372f; font-size: clamp(1.05rem, 1.8vw, 1.42rem); font-weight: 500; line-height: 1.65; }
-.years-later { margin: 34px auto 0; padding: 0; color: #8b6f60; font: 400 20px/1.35 "Vrdznagir", "Noto Sans Armenian", sans-serif; letter-spacing: .02em; word-spacing: -.18em; white-space: nowrap; }
+.years-later { margin: 34px auto 0; padding: 0; color: #8b6f60; font: 400 20px/1.35 "Vrdznagir", "Noto Sans Armenian", sans-serif; font-variant-ligatures: none; letter-spacing: .01em; word-spacing: normal; white-space: nowrap; }
 .countdown { width: min(720px, calc(100% - 32px)); text-align: center; }
 .date-card { width: min(720px, 100%); margin: 8px auto 0; padding: clamp(42px, 6vw, 68px) clamp(24px, 5vw, 62px); background: #a88977; color: var(--paper); }
 .date-masthead { margin-bottom: 48px; }
