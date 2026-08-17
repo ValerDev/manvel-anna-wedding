@@ -12,7 +12,7 @@ npx serve .
 
 ## Customize maps
 
-Replace the three values in `MAP_URLS` at the top of `js/script.js` with the final Google Maps share links.
+Replace the three values in `MAP_URLS` at the top of `js/script.js` with the final Yandex Maps links.
 
 ## Publish with GitHub Pages
 
