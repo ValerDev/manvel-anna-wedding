@@ -38,11 +38,11 @@ main { width: 100%; }
 .invitation { margin: 0 auto 36px; color: var(--sage); font-size: clamp(1rem, 2vw, 1.45rem); font-weight: 300; }
 .gift { margin: 0; font-size: clamp(1.05rem, 2vw, 1.6rem); font-weight: 600; }
 .countdown { width: min(720px, calc(100% - 32px)); text-align: center; }
-.hero-countdown { margin: clamp(42px, 6vw, 75px) auto clamp(62px, 8vw, 108px); }
+.hero-countdown { margin: clamp(12px, 2vw, 24px) auto clamp(62px, 8vw, 108px); }
 .countdown-kicker { margin: 0 0 10px; color: var(--sage); font-size: clamp(.8rem, 1.5vw, 1.05rem); font-weight: 300; letter-spacing: .15em; }
 .countdown-title { margin: 0 0 28px; color: var(--taupe); font: 400 clamp(2.2rem, 5vw, 4rem)/1.05 "Noto Sans Armenian", sans-serif; }
 .countdown-grid { display: grid; grid-template-columns: repeat(4, minmax(75px, 135px)); justify-content: center; gap: clamp(8px, 2vw, 24px); }
-.countdown-grid div { padding: 17px 8px 14px; border-top: 1px solid var(--taupe); border-bottom: 1px solid var(--taupe); }
+.countdown-grid div { padding: 17px 8px 14px; border-top: 1px solid #deddd9; border-bottom: 1px solid #deddd9; }
 .countdown-grid strong { display: block; color: var(--taupe); font: 300 clamp(1.75rem, 4vw, 3rem)/1 "Roboto", sans-serif; font-variant-numeric: tabular-nums; }
 .countdown-grid span { display: block; margin-top: 9px; color: #5e5d5a; font-size: clamp(.68rem, 1.2vw, .85rem); }
 .countdown-finished { color: var(--taupe); font-size: clamp(1.2rem, 2vw, 1.6rem); }
@@ -92,7 +92,7 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
   .hero { padding-top: 18px; }
   .rings { width: min(330px, 78vw); }
   .save-date { width: min(350px, 86vw); margin-top: 22px; }
-  .hero-countdown { width: 100%; margin: 38px auto 65px; }
+  .hero-countdown { width: 100%; margin: 10px auto 65px; }
   .eyebrow { margin-bottom: 28px; letter-spacing: .17em; }
   .armenian-heading { width: 100%; margin-bottom: 22px; }
   .invitation { max-width: 340px; line-height: 1.9; }
