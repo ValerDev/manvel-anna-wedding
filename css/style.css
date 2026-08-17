@@ -34,9 +34,7 @@ body:has(.audio-gate:not([hidden])) { overflow: hidden; }
 .envelope-cover::after { right: -8%; transform: rotate(-36deg); }
 .envelope-flap { position: absolute; inset: 0; z-index: 2; background: linear-gradient(145deg, #faf5e8, #eee4cb); clip-path: polygon(0 0, 100% 0, 50% 55%); filter: drop-shadow(0 5px 5px rgba(84,64,30,.2)); transform-origin: 50% 0; transition: transform 1s cubic-bezier(.5,0,.2,1); backface-visibility: hidden; }
 .wax-seal { position: absolute; top: 54%; left: 50%; z-index: 4; display: grid; width: 142px; height: 142px; padding: 20px; place-items: center; border: 4px solid #7c1f17; border-radius: 48% 52% 46% 54%; background: radial-gradient(circle at 36% 28%, #bd4938, #801f17 72%); box-shadow: 0 7px 18px rgba(72,35,20,.38), inset 0 0 0 7px #9c2d22, inset 0 0 0 10px rgba(74,16,12,.5); color: #651712; cursor: pointer; transform: translate(-50%,-50%) rotate(-2deg); transition: transform .25s, box-shadow .25s, opacity .4s; }
-.wax-seal svg { width: 100%; height: 100%; overflow: visible; }
-.wax-seal svg path { fill: none; stroke: currentColor; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
-.wax-seal svg .rose-bloom { fill: rgba(109,24,18,.2); }
+.wax-seal img { display: block; width: 82%; height: 82%; object-fit: contain; object-position: center; filter: brightness(.42) saturate(1.25); pointer-events: none; }
 .wax-seal:hover { transform: translate(-50%,-50%) rotate(-2deg) scale(1.04); }
 .wax-seal:active { transform: translate(-50%,-50%) rotate(-2deg) scale(.96); }
 .envelope-instruction { position: absolute; bottom: 11%; z-index: 3; width: min(330px, calc(100% - 48px)); margin: 0; color: #4f4238; font: 400 .82rem/1.7 "Noto Sans Armenian", sans-serif; letter-spacing: .02em; }
