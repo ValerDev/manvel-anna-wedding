@@ -214,7 +214,7 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
   .countdown-grid { gap: 4px; }
   .countdown-grid strong { font-size: clamp(1.45rem, 7vw, 1.9rem); }
   .countdown-grid span { font-size: .62rem; }
-  .couple { width: 100%; max-width: 375px; margin-top: 20px; }
+  .couple { width: calc(100% + 48px); max-width: none; margin: 20px 0 0 -24px; }
 }
 
 @media (max-width: 360px) {
