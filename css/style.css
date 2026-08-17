@@ -136,7 +136,7 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
 @keyframes write { to { clip-path: inset(0); } }
 
 @media (max-width: 700px) {
-  .hero, .music-section, .schedule, .date-section, .signature { width: min(calc(100% - 32px), 520px); }
+  .hero, .music-section, .schedule, .date-section, .signature { width: min(calc(100% - 48px), 520px); }
   .hero { padding-top: 18px; }
   .rings { width: min(330px, 78vw); }
   .save-date { width: min(350px, 86vw); margin-top: 22px; }
@@ -197,7 +197,7 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
 }
 
 @media (max-width: 430px) {
-  .hero, .music-section, .schedule, .date-section, .signature { width: calc(100% - 28px); }
+  .hero, .music-section, .schedule, .date-section, .signature { width: calc(100% - 48px); }
   .hero { min-height: 100svh; padding-top: 8px; }
   .rings { width: min(280px, 75vw); }
   .welcome { margin-top: 20px; }
@@ -214,7 +214,7 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
 }
 
 @media (max-width: 360px) {
-  .hero, .music-section, .schedule, .date-section, .signature { width: calc(100% - 22px); }
+  .hero, .music-section, .schedule, .date-section, .signature { width: calc(100% - 48px); }
   .eyebrow { font-size: .75rem; letter-spacing: .12em; }
   .countdown-kicker { font-size: .72rem; letter-spacing: .1em; }
   .events { gap: 56px; }
