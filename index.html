@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#f5f5f2">
   <meta name="description" content="Մանվել և Աննա — հարսանյաց հրավեր, 04.09.2026">
   <title>Manvel & Anna | 04.09.2026</title>
-  <link rel="stylesheet" href="css/style.css?v=20260818-8">
+  <link rel="stylesheet" href="css/style.css?v=20260818-9">
 </head>
 <body>
   <div class="audio-gate">
@@ -21,6 +21,13 @@
       <p class="envelope-instruction">Սեղմեք կնիքին՝ հրավերը բացելու համար</p>
     </div>
   </div>
+  <audio id="wedding-song" preload="auto" src="assets/audio/from-the-jump.mp3#t=20"></audio>
+  <button class="floating-music" type="button" id="music-toggle" aria-label="Դադարեցնել երաժշտությունը">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M9 18V6l10-2v12M9 9l10-2M6.5 21C8.43 21 10 19.88 10 18.5S8.43 16 6.5 16 3 17.12 3 18.5 4.57 21 6.5 21ZM16.5 19C18.43 19 20 17.88 20 16.5S18.43 14 16.5 14 13 15.12 13 16.5 14.57 19 16.5 19Z"/>
+      <path class="music-muted-mark" d="M4 4l16 16"/>
+    </svg>
+  </button>
   <main>
     <section class="hero" aria-label="Հարսանյաց հրավեր">
       <img class="rings intro intro-rings" src="assets/images/rings-transparent.png" alt="Միահյուսված ամուսնական մատանիներ">
@@ -41,24 +48,6 @@
         <source media="(max-width: 480px)" srcset="assets/images/couple-mobile-trimmed.png">
         <img class="couple reveal" src="assets/images/couple-transparent.png" alt="Մանվելի և Աննայի մանկության լուսանկարներով հարսն ու փեսան" decoding="async">
       </picture>
-    </section>
-
-    <section class="music-section reveal" aria-labelledby="music-title">
-      <img class="music-ornament" src="assets/images/hands-heart-transparent.png" alt="" aria-hidden="true">
-      <h2 id="music-title">ՄԵՐ ԵՐԳԸ</h2>
-      <p>From The Jump — James Arthur &amp; Kelly Clarkson</p>
-      <audio id="wedding-song" preload="auto" src="assets/audio/from-the-jump.mp3#t=20"></audio>
-      <div class="music-progress">
-        <input id="music-seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Երգի ընթացքը">
-        <div><time id="music-current">0:00</time><time id="music-duration">0:00</time></div>
-      </div>
-      <div class="music-controls">
-        <button type="button" data-music="shuffle" aria-label="Խառը նվագարկում"><svg viewBox="0 0 24 24"><path d="M3 7h3c5 0 6 10 11 10h4M18 4l3 3-3 3M3 17h3c2.2 0 3.6-1.9 5-4M18 14l3 3-3 3"/></svg></button>
-        <button type="button" data-music="previous" aria-label="Սկզբից"><svg viewBox="0 0 24 24"><path d="M6 5v14M19 6 9 12l10 6Z"/></svg></button>
-        <button class="music-play" type="button" data-music="play" aria-label="Նվագարկել"><svg class="play-symbol" viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg><svg class="pause-symbol" viewBox="0 0 24 24"><path d="M9 6v12M15 6v12"/></svg></button>
-        <button type="button" data-music="next" aria-label="Սկզբից"><svg viewBox="0 0 24 24"><path d="M18 5v14M5 6l10 6-10 6Z"/></svg></button>
-        <button type="button" data-music="repeat" aria-label="Կրկնել"><svg viewBox="0 0 24 24"><path d="M17 2l3 3-3 3M20 5H7a4 4 0 0 0-4 4v1M7 22l-3-3 3-3M4 19h13a4 4 0 0 0 4-4v-1"/></svg></button>
-      </div>
     </section>
 
     <section class="date-section" aria-label="Հարսանիքի ամսաթիվ և հետհաշվարկ">
