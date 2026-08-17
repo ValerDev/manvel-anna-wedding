@@ -61,7 +61,7 @@ main { width: 100%; }
   display: inline-flex; width: min(100%, 245px); min-height: 58px; align-items: center; justify-content: center; gap: 12px;
   border: 1px solid #bbb; color: var(--ink); text-decoration: none; font-size: .95rem; transition: transform .25s, border-color .25s, background .25s;
 }
-.map-button span { font: 300 1.8rem/1 "Roboto"; transform: rotate(-35deg); }
+.pin-icon { width: 20px; height: 20px; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .map-button:hover { transform: translateY(-3px); border-color: var(--taupe); background: rgba(174,136,116,.07); }
 .map-button:active { transform: scale(.98); }
 .map-button:focus-visible { outline: 2px solid var(--taupe); outline-offset: 4px; }
@@ -114,7 +114,7 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
   .event .time { margin: 12px 0 7px; font-size: clamp(.58rem, 2.35vw, .72rem); white-space: nowrap; }
   .event p:not(.time) { min-height: 48px; margin-bottom: 10px; font-size: clamp(.48rem, 1.85vw, .61rem); line-height: 1.65; }
   .map-button { width: 100%; min-height: 32px; gap: 3px; padding: 4px 2px; font-size: clamp(.43rem, 1.7vw, .57rem); white-space: nowrap; }
-  .map-button span { font-size: .9rem; }
+  .pin-icon { width: 13px; height: 13px; }
   .timeline { display: flex; width: 82%; margin-top: 27px; }
   .heart { font-size: 14px; }
   .signature { padding: 38px 0 52px; }
