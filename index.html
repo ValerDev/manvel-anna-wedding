@@ -24,6 +24,25 @@
       <img class="couple reveal" src="assets/images/couple-transparent.png" alt="Մանվելի և Աննայի մանկության լուսանկարներով հարսն ու փեսան" decoding="async">
     </section>
 
+    <section class="music-section reveal" aria-labelledby="music-title">
+      <span class="music-ornament" aria-hidden="true">❧</span>
+      <h2 id="music-title">ՄԵՐ ԵՐԳԸ</h2>
+      <p>From The Jump — James Arthur &amp; Kelly Clarkson</p>
+      <div id="youtube-player" class="youtube-player" aria-hidden="true"></div>
+      <div class="music-progress">
+        <input id="music-seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Երգի ընթացքը">
+        <div><time id="music-current">0:00</time><time id="music-duration">0:00</time></div>
+      </div>
+      <div class="music-controls">
+        <button type="button" data-music="shuffle" aria-label="Խառը նվագարկում"><svg viewBox="0 0 24 24"><path d="M3 7h3c5 0 6 10 11 10h4M18 4l3 3-3 3M3 17h3c2.2 0 3.6-1.9 5-4M18 14l3 3-3 3"/></svg></button>
+        <button type="button" data-music="previous" aria-label="Սկզբից"><svg viewBox="0 0 24 24"><path d="M6 5v14M19 6 9 12l10 6Z"/></svg></button>
+        <button class="music-play" type="button" data-music="play" aria-label="Նվագարկել"><svg class="play-symbol" viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg><svg class="pause-symbol" viewBox="0 0 24 24"><path d="M9 6v12M15 6v12"/></svg></button>
+        <button type="button" data-music="next" aria-label="Սկզբից"><svg viewBox="0 0 24 24"><path d="M18 5v14M5 6l10 6-10 6Z"/></svg></button>
+        <button type="button" data-music="repeat" aria-label="Կրկնել"><svg viewBox="0 0 24 24"><path d="M17 2l3 3-3 3M20 5H7a4 4 0 0 0-4 4v1M7 22l-3-3 3-3M4 19h13a4 4 0 0 0 4-4v-1"/></svg></button>
+      </div>
+      <a class="youtube-link" href="https://www.youtube.com/watch?v=MIvlR2R1dx4" target="_blank" rel="noopener noreferrer">Բացել YouTube-ում</a>
+    </section>
+
     <section class="date-section" aria-label="Հարսանիքի ամսաթիվ և հետհաշվարկ">
       <div class="date-card reveal">
         <div class="date-masthead" aria-label="Ուրբաթ, 4 սեպտեմբերի 2026">
