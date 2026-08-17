@@ -70,7 +70,7 @@ main { width: 100%; }
 .countdown-kicker { margin: 0 0 10px; color: rgba(245,245,242,.8); font-size: clamp(.8rem, 1.5vw, 1.05rem); font-weight: 300; letter-spacing: .15em; }
 .countdown-title { margin: 0 0 28px; color: var(--paper); font: 400 clamp(2rem, 4.5vw, 3.5rem)/1.05 "Noto Sans Armenian", sans-serif; }
 .countdown-grid { display: grid; grid-template-columns: repeat(4, minmax(75px, 135px)); justify-content: center; gap: clamp(8px, 2vw, 24px); }
-.countdown-grid div { margin-inline: 6px; padding: 17px 2px 14px; border-top: 1px solid rgba(245,245,242,.42); border-bottom: 1px solid rgba(245,245,242,.42); }
+.countdown-grid div { margin-inline: 6px; padding: 17px 2px 14px; }
 .countdown-grid strong { display: block; color: var(--paper); font: 300 clamp(1.75rem, 4vw, 3rem)/1 "Roboto", sans-serif; font-variant-numeric: tabular-nums; }
 .countdown-grid span { display: block; margin-top: 9px; color: rgba(245,245,242,.8); font-size: clamp(.68rem, 1.2vw, .85rem); }
 .countdown-finished { color: var(--paper); font-size: clamp(1.2rem, 2vw, 1.6rem); }
