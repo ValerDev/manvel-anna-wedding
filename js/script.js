@@ -98,7 +98,8 @@ function removeScrollPlayListeners() {
 }
 
 function startMusicFromScroll() {
-  if (!musicAudio.paused || scrollPlayAttemptInProgress) return;
+  if (!musicAudio.paused || scrollPlayAttemptInProgress || musicAudio.readyState < 1) return;
+  if (musicAudio.currentTime < MUSIC_START_TIME) musicAudio.currentTime = MUSIC_START_TIME;
   scrollPlayAttemptInProgress = true;
   musicAudio.play()
     .then(removeScrollPlayListeners)
@@ -110,10 +111,8 @@ window.addEventListener("wheel", startMusicFromScroll, { passive: true });
 window.addEventListener("touchstart", startMusicFromScroll, { passive: true });
 
 function attemptImmediatePlayback() {
-  if (!musicAudio.paused) return;
-  if (musicAudio.readyState >= 1 && musicAudio.currentTime < MUSIC_START_TIME) {
-    musicAudio.currentTime = MUSIC_START_TIME;
-  }
+  if (!musicAudio.paused || musicAudio.readyState < 1) return;
+  if (musicAudio.currentTime < MUSIC_START_TIME) musicAudio.currentTime = MUSIC_START_TIME;
   musicAudio.play().catch(() => { audioGate.hidden = false; });
 }
 
