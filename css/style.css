@@ -57,9 +57,12 @@ main { width: 100%; }
 .welcome { margin-top: clamp(32px, 4.5vw, 58px); }
 .eyebrow { margin: 0 0 28px; color: #6f6b65; font-size: clamp(.82rem, 1.5vw, 1.15rem); font-weight: 300; letter-spacing: .24em; }
 .armenian-heading { display: block; width: min(100%, 1050px); height: auto; margin: 0 auto 44px; }
-.invitation { max-width: 670px; margin: 0 auto 34px; color: var(--sage); font-size: clamp(1rem, 1.8vw, 1.32rem); font-weight: 300; line-height: 1.8; }
+.invitation { max-width: 670px; margin: 0 auto; color: var(--sage); font-size: clamp(1rem, 1.8vw, 1.32rem); font-weight: 300; line-height: 1.8; }
 .gift { max-width: 720px; margin: 0 auto; color: #4b372f; font-size: clamp(1.05rem, 1.8vw, 1.42rem); font-weight: 500; line-height: 1.65; }
-.years-later { margin: clamp(48px, 6vw, 76px) auto 0; color: #8b6f60; font: 400 clamp(1rem, 1.8vw, 1.25rem)/1.5 "Noto Sans Armenian", sans-serif; letter-spacing: .035em; }
+.hero-divider { display: block; margin: 25px auto; color: rgba(168,137,119,.62); font: 400 .82rem/1 Arial, sans-serif; }
+.hero-divider-line { display: flex; width: 138px; margin-top: -8px; align-items: center; gap: 10px; }
+.hero-divider-line::before, .hero-divider-line::after { content: ""; height: 1px; flex: 1; background: rgba(168,137,119,.42); }
+.years-later { margin: 34px auto 0; color: #8b6f60; font: 400 clamp(1rem, 1.8vw, 1.25rem)/1.5 "Noto Sans Armenian", sans-serif; letter-spacing: .035em; }
 .countdown { width: min(720px, calc(100% - 32px)); text-align: center; }
 .date-card { width: min(720px, 100%); margin: 8px auto 0; padding: clamp(42px, 6vw, 68px) clamp(24px, 5vw, 62px); background: #a88977; color: var(--paper); }
 .date-masthead { margin-bottom: 48px; }
@@ -182,7 +185,7 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
   .date-lockup { gap: 10px; }
   .date-lockup strong { font-size: 4.6rem; }
   .hero-countdown { margin-bottom: 48px; }
-  .years-later { margin-top: 48px; }
+  .years-later { margin-top: 34px; }
   .couple { width: 104%; max-width: 540px; margin: 20px auto 0; transform-origin: center; }
   .couple.reveal { transform: translateY(20px) scale(.96); }
   .couple.reveal.is-visible { transform: scale(1); }
@@ -235,14 +238,16 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
   .welcome { margin-top: 24px; }
   .eyebrow { margin-bottom: 18px; font-size: .72rem; line-height: 1.35; letter-spacing: .16em; }
   .armenian-heading { width: 94%; margin-bottom: 18px; }
-  .invitation { max-width: 292px; margin-bottom: 22px; font-size: .84rem; line-height: 1.72; }
+  .hero-divider { margin: 20px auto; font-size: .72rem; }
+  .hero-divider-line { width: 112px; margin-top: 0; }
+  .invitation { max-width: 292px; font-size: .84rem; line-height: 1.72; }
   .gift { max-width: 310px; margin-top: 0; color: #4b372f; font-size: .9rem; font-weight: 500; line-height: 1.55; }
   .save-date text { font-size: 52px; letter-spacing: -1px; }
   .countdown-title { font-size: clamp(1.8rem, 8vw, 2.4rem); }
   .countdown-grid { gap: 4px; }
   .countdown-grid strong { font-size: clamp(1.45rem, 7vw, 1.9rem); }
   .countdown-grid span { font-size: .62rem; }
-  .years-later { margin-top: 42px; font-size: .86rem; letter-spacing: .025em; }
+  .years-later { margin-top: 28px; font-size: .86rem; letter-spacing: .025em; }
   .couple-wrap { display: block; width: 100%; line-height: 0; }
   .couple { width: calc(100% + 64px); max-width: none; margin: 18px 0 0 -32px; }
 }
