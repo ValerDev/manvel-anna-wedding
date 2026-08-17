@@ -5,7 +5,6 @@ const MAP_URLS = {
 };
 
 const WEDDING_DATE = new Date("2026-09-04T00:00:00+04:00");
-const MUSIC_VIDEO_ID = "MIvlR2R1dx4";
 
 document.querySelectorAll("[data-map]").forEach((link) => {
   link.href = MAP_URLS[link.dataset.map];
@@ -48,12 +47,10 @@ document.querySelectorAll(".reveal").forEach((element) => observer.observe(eleme
 requestAnimationFrame(() => document.body.classList.add("loaded"));
 
 const musicSection = document.querySelector(".music-section");
+const musicAudio = document.querySelector("#wedding-song");
 const musicSeek = document.querySelector("#music-seek");
 const musicCurrent = document.querySelector("#music-current");
 const musicDuration = document.querySelector("#music-duration");
-let musicPlayer;
-let musicTimer;
-let repeatSong = false;
 
 function formatTime(seconds) {
   if (!Number.isFinite(seconds)) return "0:00";
@@ -62,9 +59,8 @@ function formatTime(seconds) {
 }
 
 function syncMusicProgress() {
-  if (!musicPlayer?.getDuration) return;
-  const duration = musicPlayer.getDuration() || 0;
-  const current = musicPlayer.getCurrentTime() || 0;
+  const duration = musicAudio.duration || 0;
+  const current = musicAudio.currentTime || 0;
   const progress = duration ? (current / duration) * 100 : 0;
   musicSeek.value = progress;
   musicSeek.style.setProperty("--music-progress", `${progress}%`);
@@ -72,50 +68,38 @@ function syncMusicProgress() {
   musicDuration.textContent = formatTime(duration);
 }
 
-window.onYouTubeIframeAPIReady = () => {
-  musicPlayer = new YT.Player("youtube-player", {
-    videoId: MUSIC_VIDEO_ID,
-    playerVars: { controls: 0, rel: 0, playsinline: 1 },
-    events: {
-      onReady: syncMusicProgress,
-      onStateChange: ({ data }) => {
-        const playing = data === YT.PlayerState.PLAYING;
-        musicSection.classList.toggle("is-playing", playing);
-        document.querySelector('[data-music="play"]').setAttribute("aria-label", playing ? "Դադարեցնել" : "Նվագարկել");
-        clearInterval(musicTimer);
-        if (playing) musicTimer = setInterval(syncMusicProgress, 500);
-        if (data === YT.PlayerState.ENDED && repeatSong) musicPlayer.playVideo();
-        syncMusicProgress();
-      }
-    }
-  });
-};
-
-const youtubeApi = document.createElement("script");
-youtubeApi.src = "https://www.youtube.com/iframe_api";
-youtubeApi.async = true;
-document.head.appendChild(youtubeApi);
+musicAudio.addEventListener("loadedmetadata", syncMusicProgress);
+musicAudio.addEventListener("durationchange", syncMusicProgress);
+musicAudio.addEventListener("timeupdate", syncMusicProgress);
+musicAudio.addEventListener("play", () => {
+  musicSection.classList.add("is-playing");
+  document.querySelector('[data-music="play"]').setAttribute("aria-label", "Դադարեցնել");
+});
+musicAudio.addEventListener("pause", () => {
+  musicSection.classList.remove("is-playing");
+  document.querySelector('[data-music="play"]').setAttribute("aria-label", "Նվագարկել");
+});
+musicAudio.addEventListener("ended", syncMusicProgress);
 
 document.querySelectorAll("[data-music]").forEach((button) => {
   button.addEventListener("click", () => {
-    if (!musicPlayer?.playVideo) return;
     const action = button.dataset.music;
     if (action === "play") {
-      musicPlayer.getPlayerState() === YT.PlayerState.PLAYING ? musicPlayer.pauseVideo() : musicPlayer.playVideo();
+      musicAudio.paused ? musicAudio.play() : musicAudio.pause();
     } else if (action === "repeat") {
-      repeatSong = !repeatSong;
-      button.classList.toggle("is-active", repeatSong);
+      musicAudio.loop = !musicAudio.loop;
+      button.classList.toggle("is-active", musicAudio.loop);
     } else if (action === "shuffle") {
       button.classList.toggle("is-active");
     } else {
-      musicPlayer.seekTo(0, true);
-      musicPlayer.playVideo();
+      musicAudio.currentTime = 0;
+      musicAudio.play();
     }
   });
 });
 
 musicSeek.addEventListener("input", () => {
-  if (!musicPlayer?.getDuration) return;
-  musicPlayer.seekTo((Number(musicSeek.value) / 100) * musicPlayer.getDuration(), true);
+  if (!musicAudio.duration) return;
+  musicAudio.currentTime = (Number(musicSeek.value) / 100) * musicAudio.duration;
   syncMusicProgress();
 });
