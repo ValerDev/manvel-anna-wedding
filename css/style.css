@@ -22,6 +22,14 @@ body {
   font-family: "Noto Sans Armenian", "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
+.audio-gate[hidden] { display: none; }
+.audio-gate { position: fixed; inset: 0; z-index: 1000; display: grid; padding: 24px; place-items: center; background: rgba(245,245,242,.98); }
+.audio-gate-card { width: min(380px, 100%); text-align: center; }
+.audio-gate-card img { width: min(290px, 80%); height: auto; }
+.audio-gate-card p { margin: 28px 0 24px; color: var(--taupe); font-size: 1.15rem; letter-spacing: .12em; }
+.audio-gate-card button { min-width: 220px; min-height: 52px; padding: 12px 24px; border: 1px solid var(--taupe); background: transparent; color: var(--ink); font: 400 .95rem "Noto Sans Armenian", sans-serif; cursor: pointer; transition: background .2s, color .2s, transform .2s; }
+.audio-gate-card button:hover { background: var(--taupe); color: var(--paper); }
+.audio-gate-card button:active { transform: scale(.97); }
 main { width: 100%; }
 .hero, .music-section, .schedule, .date-section, .signature { width: min(1180px, 92vw); margin-inline: auto; text-align: center; }
 .hero { padding-top: clamp(26px, 4vw, 58px); }

@@ -49,6 +49,8 @@ requestAnimationFrame(() => document.body.classList.add("loaded"));
 
 const musicSection = document.querySelector(".music-section");
 const musicAudio = document.querySelector("#wedding-song");
+const audioGate = document.querySelector(".audio-gate");
+const openInvitationButton = document.querySelector("#open-invitation");
 const musicSeek = document.querySelector("#music-seek");
 const musicCurrent = document.querySelector("#music-current");
 const musicDuration = document.querySelector("#music-duration");
@@ -77,6 +79,7 @@ musicAudio.addEventListener("durationchange", syncMusicProgress);
 musicAudio.addEventListener("timeupdate", syncMusicProgress);
 musicAudio.addEventListener("play", () => {
   removeScrollPlayListeners();
+  audioGate.hidden = true;
   musicSection.classList.add("is-playing");
   document.querySelector('[data-music="play"]').setAttribute("aria-label", "Դադարեցնել");
 });
@@ -111,14 +114,21 @@ function attemptImmediatePlayback() {
   if (musicAudio.readyState >= 1 && musicAudio.currentTime < MUSIC_START_TIME) {
     musicAudio.currentTime = MUSIC_START_TIME;
   }
-  musicAudio.play().catch(() => {
-    // Audible autoplay may be blocked; first touch/scroll remains the fallback.
-  });
+  musicAudio.play().catch(() => { audioGate.hidden = false; });
 }
 
 musicAudio.addEventListener("canplay", attemptImmediatePlayback, { once: true });
 window.addEventListener("load", attemptImmediatePlayback, { once: true });
 attemptImmediatePlayback();
+
+openInvitationButton.addEventListener("click", () => {
+  if (musicAudio.readyState >= 1 && musicAudio.currentTime < MUSIC_START_TIME) {
+    musicAudio.currentTime = MUSIC_START_TIME;
+  }
+  musicAudio.play()
+    .then(() => { audioGate.hidden = true; })
+    .catch(() => { audioGate.hidden = true; });
+});
 
 document.querySelectorAll("[data-music]").forEach((button) => {
   button.addEventListener("click", () => {
