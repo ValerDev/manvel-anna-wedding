@@ -6,6 +6,10 @@
   --line: #d5d4d1;
 }
 
+@font-face { font-family: "Italianno"; src: url("../assets/fonts/italianno.ttf") format("truetype"); font-style: normal; font-weight: 400; font-display: swap; }
+@font-face { font-family: "Noto Sans Armenian"; src: url("../assets/fonts/noto-armenian-300.ttf") format("truetype"); font-style: normal; font-weight: 300 500; font-display: swap; }
+@font-face { font-family: "Noto Sans Armenian"; src: url("../assets/fonts/noto-armenian-600.ttf") format("truetype"); font-style: normal; font-weight: 600 900; font-display: swap; }
+
 * { box-sizing: border-box; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 html { scroll-behavior: smooth; }
@@ -71,9 +75,9 @@ main { width: 100%; }
 .signature img { display: block; width: min(900px, 90%); height: auto; margin: auto; mix-blend-mode: multiply; clip-path: inset(0 100% 0 0); }
 .signature.is-visible img { animation: write 2s cubic-bezier(.6,0,.25,1) forwards; }
 .intro { opacity: 0; }
-body.loaded .intro-rings { animation: fade-in 1.2s ease forwards; }
-body.loaded .intro-title { animation: fade-up 1s ease .25s forwards; }
-body.loaded .intro-date { animation: reveal-date 1.1s ease .55s forwards; }
+body.loaded .intro-rings { animation: fade-in .7s ease forwards; }
+body.loaded .intro-title { animation: fade-up .7s ease .08s forwards; }
+body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity .85s ease var(--delay, 0ms), transform .85s ease var(--delay, 0ms); }
 .reveal.is-visible { opacity: 1; transform: none; }
 .couple.reveal { transform: translateY(20px) scale(.96); }

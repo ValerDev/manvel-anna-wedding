@@ -44,4 +44,5 @@ const observer = new IntersectionObserver((entries, currentObserver) => {
 }, { threshold: 0.14, rootMargin: "0px 0px -5%" });
 
 document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
-window.addEventListener("load", () => document.body.classList.add("loaded"), { once: true });
+// Start the entrance immediately; do not wait for images or fonts to finish loading.
+requestAnimationFrame(() => document.body.classList.add("loaded"));
