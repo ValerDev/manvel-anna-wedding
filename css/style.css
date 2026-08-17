@@ -60,7 +60,7 @@ main { width: 100%; }
 .save-date text { fill: var(--ink); font: 400 55px "Roboto", Arial, sans-serif; letter-spacing: -1.5px; }
 .welcome { margin-top: clamp(32px, 4.5vw, 58px); }
 .eyebrow { margin: 0 0 28px; color: #6f6b65; font-size: clamp(.82rem, 1.5vw, 1.15rem); font-weight: 300; letter-spacing: .24em; }
-.armenian-heading { margin: 0 auto 24px; color: #a88977; font: 400 clamp(2.8rem, 7vw, 5.6rem)/1.08 "Vrdznagir", "Noto Sans Armenian", sans-serif; }
+.armenian-heading { margin: 0 auto 24px; color: #a88977; font: 400 40px/1.08 "Vrdznagir", "Noto Sans Armenian", sans-serif; }
 .heading-heart-divider { display: flex; width: 86px; margin: 0 auto 22px; align-items: center; gap: 8px; color: #c8aa96; font: 400 10px/1 Arial, sans-serif; }
 .heading-heart-divider::before, .heading-heart-divider::after { content: ""; height: 1px; flex: 1; background: rgba(200,170,150,.58); }
 .invitation { max-width: 670px; margin: 0 auto 30px; color: var(--sage); font-size: clamp(1rem, 1.8vw, 1.32rem); font-weight: 300; line-height: 1.8; }
@@ -227,7 +227,7 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
   .rings { width: min(220px, 58vw); }
   .welcome { margin-top: 24px; }
   .eyebrow { margin-bottom: 18px; font-size: .72rem; line-height: 1.35; letter-spacing: .16em; }
-  .armenian-heading { margin-bottom: 20px; font-size: clamp(2.45rem, 12vw, 3.2rem); }
+  .armenian-heading { margin-bottom: 20px; font-size: 40px; }
   .heading-heart-divider { width: 76px; margin-bottom: 20px; gap: 7px; font-size: 9px; }
   .invitation { max-width: 292px; margin-bottom: 24px; font-size: .84rem; line-height: 1.72; }
   .gift { max-width: 310px; margin-top: 0; color: #4b372f; font-size: .9rem; font-weight: 500; line-height: 1.55; }
