@@ -206,7 +206,7 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
 
 @media (max-width: 430px) {
   .hero, .music-section, .schedule, .date-section, .signature { width: calc(100% - 48px); }
-  .hero { min-height: 100svh; padding-top: 8px; }
+  .hero { display: flex; min-height: 100svh; padding-top: 8px; flex-direction: column; align-items: center; }
   .rings { width: min(280px, 75vw); }
   .welcome { margin-top: 20px; }
   .eyebrow { margin-bottom: 15px; font-size: .76rem; line-height: 1.3; }
@@ -218,7 +218,8 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
   .countdown-grid { gap: 4px; }
   .countdown-grid strong { font-size: clamp(1.45rem, 7vw, 1.9rem); }
   .countdown-grid span { font-size: .62rem; }
-  .couple { width: calc(100% + 48px); max-width: none; margin: 34px 0 0 -24px; }
+  .couple-wrap { display: block; width: 100%; margin-top: auto; line-height: 0; }
+  .couple { width: calc(100% + 48px); max-width: none; margin: 24px 0 0 -24px; }
 }
 
 @media (max-width: 360px) {
