@@ -123,12 +123,19 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
 
 @media (max-width: 430px) {
   .hero, .schedule, .date-section, .signature { width: calc(100% - 28px); }
+  .hero { padding-top: 8px; }
+  .rings { width: min(280px, 75vw); }
+  .welcome { margin-top: 20px; }
+  .eyebrow { margin-bottom: 15px; font-size: .76rem; line-height: 1.3; }
+  .armenian-heading { width: 96%; margin-bottom: 14px; }
+  .invitation { max-width: 335px; margin-bottom: 14px; font-size: .86rem; line-height: 1.55; }
+  .gift { max-width: 335px; font-size: .9rem; line-height: 1.45; }
   .save-date text { font-size: 52px; letter-spacing: -1px; }
   .countdown-title { font-size: clamp(1.8rem, 8vw, 2.4rem); }
   .countdown-grid { gap: 4px; }
   .countdown-grid strong { font-size: clamp(1.45rem, 7vw, 1.9rem); }
   .countdown-grid span { font-size: .62rem; }
-  .couple { margin-top: 45px; }
+  .couple { width: 88%; margin-top: 20px; }
 }
 
 @media (max-width: 360px) {
