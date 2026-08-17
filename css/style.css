@@ -27,6 +27,9 @@ body:has(.audio-gate:not([hidden])) { overflow: hidden; }
 .audio-gate { position: fixed; inset: 0; z-index: 1000; overflow: hidden; background: #f3ecd9; transition: opacity .8s ease, visibility .8s; perspective: 1200px; }
 .audio-gate::before { content: ""; position: absolute; inset: 0; opacity: .36; background: radial-gradient(circle at 20% 14%, rgba(255,255,255,.65), transparent 30%), radial-gradient(circle at 83% 76%, rgba(188,166,119,.16), transparent 35%), repeating-linear-gradient(92deg, transparent 0 4px, rgba(122,99,61,.025) 5px 6px); pointer-events: none; }
 .envelope-cover { position: relative; display: grid; width: 100%; height: 100%; min-height: 100svh; place-items: center; text-align: center; }
+.envelope-message { position: absolute; top: 11%; z-index: 3; width: min(650px, calc(100% - 48px)); }
+.envelope-message img { display: block; width: 100%; height: auto; margin: auto; }
+.envelope-message p { width: min(520px, 92%); margin: 20px auto 0; color: #4f4238; font: 300 clamp(.86rem, 2.5vw, 1rem)/1.8 "Noto Sans Armenian", sans-serif; }
 .envelope-cover::before, .envelope-cover::after { content: ""; position: absolute; bottom: 27%; z-index: 0; width: 65%; height: 1px; background: rgba(118,91,49,.38); transform-origin: bottom center; }
 .envelope-cover::before { left: -8%; transform: rotate(36deg); }
 .envelope-cover::after { right: -8%; transform: rotate(-36deg); }
@@ -37,6 +40,7 @@ body:has(.audio-gate:not([hidden])) { overflow: hidden; }
 .wax-seal svg .rose-bloom { fill: rgba(109,24,18,.2); }
 .wax-seal:hover { transform: translate(-50%,-50%) rotate(-2deg) scale(1.04); }
 .wax-seal:active { transform: translate(-50%,-50%) rotate(-2deg) scale(.96); }
+.envelope-instruction { position: absolute; bottom: 11%; z-index: 3; width: min(330px, calc(100% - 48px)); margin: 0; color: #4f4238; font: 400 .82rem/1.7 "Noto Sans Armenian", sans-serif; letter-spacing: .02em; }
 .audio-gate.is-opening .envelope-flap { transform: rotateX(-165deg); }
 .audio-gate.is-opening .wax-seal { opacity: 0; transform: translate(-50%,-60%) scale(.72); }
 .audio-gate.is-opening { opacity: 0; visibility: hidden; transition-delay: .4s; }
