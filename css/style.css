@@ -1,5 +1,6 @@
 :root {
-  --paper: #f8f7f3;
+  /* Exact canvas color sampled from V1.pdf; keeps extracted artwork seamless. */
+  --paper: #f5f5f2;
   --ink: #171614;
   --taupe: #ae8874;
   --sage: #8f927d;
