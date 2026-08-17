@@ -102,6 +102,17 @@ window.addEventListener("scroll", startMusicFromScroll, { passive: true });
 window.addEventListener("wheel", startMusicFromScroll, { passive: true });
 window.addEventListener("touchstart", startMusicFromScroll, { passive: true });
 
+function attemptImmediatePlayback() {
+  if (!musicAudio.paused) return;
+  musicAudio.play().catch(() => {
+    // Audible autoplay may be blocked; first touch/scroll remains the fallback.
+  });
+}
+
+musicAudio.addEventListener("canplay", attemptImmediatePlayback, { once: true });
+window.addEventListener("load", attemptImmediatePlayback, { once: true });
+attemptImmediatePlayback();
+
 document.querySelectorAll("[data-music]").forEach((button) => {
   button.addEventListener("click", () => {
     const action = button.dataset.music;
