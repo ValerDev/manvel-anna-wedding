@@ -72,6 +72,7 @@ musicAudio.addEventListener("loadedmetadata", syncMusicProgress);
 musicAudio.addEventListener("durationchange", syncMusicProgress);
 musicAudio.addEventListener("timeupdate", syncMusicProgress);
 musicAudio.addEventListener("play", () => {
+  removeScrollPlayListeners();
   musicSection.classList.add("is-playing");
   document.querySelector('[data-music="play"]').setAttribute("aria-label", "Դադարեցնել");
 });
@@ -80,6 +81,26 @@ musicAudio.addEventListener("pause", () => {
   document.querySelector('[data-music="play"]').setAttribute("aria-label", "Նվագարկել");
 });
 musicAudio.addEventListener("ended", syncMusicProgress);
+
+let scrollPlayAttemptInProgress = false;
+
+function removeScrollPlayListeners() {
+  window.removeEventListener("scroll", startMusicFromScroll);
+  window.removeEventListener("wheel", startMusicFromScroll);
+  window.removeEventListener("touchstart", startMusicFromScroll);
+}
+
+function startMusicFromScroll() {
+  if (!musicAudio.paused || scrollPlayAttemptInProgress) return;
+  scrollPlayAttemptInProgress = true;
+  musicAudio.play()
+    .then(removeScrollPlayListeners)
+    .catch(() => { scrollPlayAttemptInProgress = false; });
+}
+
+window.addEventListener("scroll", startMusicFromScroll, { passive: true });
+window.addEventListener("wheel", startMusicFromScroll, { passive: true });
+window.addEventListener("touchstart", startMusicFromScroll, { passive: true });
 
 document.querySelectorAll("[data-music]").forEach((button) => {
   button.addEventListener("click", () => {
