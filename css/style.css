@@ -162,7 +162,7 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
   .couple { width: 100%; max-width: 520px; margin: 55px auto 0; }
   .couple.reveal { transform: translateY(20px) scale(.96); }
   .couple.reveal.is-visible { transform: scale(1); }
-  .schedule { padding-top: 55px; }
+  .schedule { padding-top: 40px; }
   .music-section { padding: 70px 0 55px; }
   .events { position: relative; display: flex; flex-direction: column; gap: 64px; }
   .events::before { content: ""; position: absolute; left: 15px; top: 87px; bottom: 29px; width: 1px; background: var(--line); }
