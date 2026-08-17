@@ -24,19 +24,20 @@ body {
 }
 .audio-gate[hidden] { display: none; }
 body:has(.audio-gate:not([hidden])) { overflow: hidden; }
-.audio-gate { position: fixed; inset: 0; z-index: 1000; overflow: hidden; background: #3f241e; color: #f5eee6; transition: opacity .8s ease, visibility .8s; perspective: 1200px; }
-.audio-gate::before { content: ""; position: absolute; inset: 0; opacity: .28; background: radial-gradient(circle at 25% 15%, rgba(255,255,255,.12), transparent 28%), radial-gradient(circle at 80% 78%, rgba(0,0,0,.25), transparent 34%), repeating-linear-gradient(35deg, transparent 0 3px, rgba(255,255,255,.018) 4px 5px); pointer-events: none; }
+.audio-gate { position: fixed; inset: 0; z-index: 1000; overflow: hidden; background: #f3ecd9; transition: opacity .8s ease, visibility .8s; perspective: 1200px; }
+.audio-gate::before { content: ""; position: absolute; inset: 0; opacity: .36; background: radial-gradient(circle at 20% 14%, rgba(255,255,255,.65), transparent 30%), radial-gradient(circle at 83% 76%, rgba(188,166,119,.16), transparent 35%), repeating-linear-gradient(92deg, transparent 0 4px, rgba(122,99,61,.025) 5px 6px); pointer-events: none; }
 .envelope-cover { position: relative; display: grid; width: 100%; height: 100%; min-height: 100svh; place-items: center; text-align: center; }
-.envelope-copy { position: absolute; top: 14%; z-index: 3; padding: 0 24px; }
-.envelope-copy > p { margin: 0 0 18px; color: #d9cabc; font-size: .72rem; letter-spacing: .26em; }
-.envelope-copy h1 { margin: 0; font: 400 clamp(2.4rem, 10vw, 4.7rem)/1.05 "Italianno", cursive; }
-.envelope-flap { position: absolute; inset: 0; z-index: 1; background: linear-gradient(155deg, transparent 49.8%, rgba(25,10,7,.32) 50%), linear-gradient(205deg, transparent 49.8%, rgba(255,255,255,.035) 50%); clip-path: polygon(0 34%, 50% 64%, 100% 34%, 100% 100%, 0 100%); transform-origin: 50% 34%; transition: transform .85s cubic-bezier(.5,0,.2,1); }
-.wax-seal { position: absolute; top: 57%; left: 50%; z-index: 4; display: grid; width: 126px; height: 126px; padding: 10px; place-items: center; border: 3px solid #756a45; border-radius: 48% 52% 46% 54%; background: radial-gradient(circle at 38% 30%, #9b9265, #665d3d 72%); box-shadow: 0 6px 18px rgba(0,0,0,.4), inset 0 0 0 7px #756d48, inset 0 0 0 9px rgba(32,28,15,.45); color: #e1c98e; cursor: pointer; transform: translate(-50%,-50%) rotate(-2deg); transition: transform .25s, box-shadow .25s, opacity .4s; }
-.wax-seal span { font: 400 2.3rem/1 "Italianno", cursive; text-shadow: 0 1px 1px #332d1c; }
+.envelope-cover::before, .envelope-cover::after { content: ""; position: absolute; bottom: 27%; z-index: 0; width: 65%; height: 1px; background: rgba(118,91,49,.38); transform-origin: bottom center; }
+.envelope-cover::before { left: -8%; transform: rotate(36deg); }
+.envelope-cover::after { right: -8%; transform: rotate(-36deg); }
+.envelope-flap { position: absolute; inset: 0; z-index: 2; background: linear-gradient(145deg, #faf5e8, #eee4cb); clip-path: polygon(0 0, 100% 0, 50% 55%); filter: drop-shadow(0 5px 5px rgba(84,64,30,.2)); transform-origin: 50% 0; transition: transform 1s cubic-bezier(.5,0,.2,1); backface-visibility: hidden; }
+.wax-seal { position: absolute; top: 54%; left: 50%; z-index: 4; display: grid; width: 142px; height: 142px; padding: 20px; place-items: center; border: 4px solid #7c1f17; border-radius: 48% 52% 46% 54%; background: radial-gradient(circle at 36% 28%, #bd4938, #801f17 72%); box-shadow: 0 7px 18px rgba(72,35,20,.38), inset 0 0 0 7px #9c2d22, inset 0 0 0 10px rgba(74,16,12,.5); color: #651712; cursor: pointer; transform: translate(-50%,-50%) rotate(-2deg); transition: transform .25s, box-shadow .25s, opacity .4s; }
+.wax-seal svg { width: 100%; height: 100%; overflow: visible; }
+.wax-seal svg path { fill: none; stroke: currentColor; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.wax-seal svg .rose-bloom { fill: rgba(109,24,18,.2); }
 .wax-seal:hover { transform: translate(-50%,-50%) rotate(-2deg) scale(1.04); }
 .wax-seal:active { transform: translate(-50%,-50%) rotate(-2deg) scale(.96); }
-.envelope-instruction { position: absolute; bottom: 11%; z-index: 3; width: min(310px, calc(100% - 48px)); margin: 0; color: #e2d6cc; font-size: .85rem; line-height: 1.7; letter-spacing: .04em; }
-.audio-gate.is-opening .envelope-flap { transform: rotateX(160deg); }
+.audio-gate.is-opening .envelope-flap { transform: rotateX(-165deg); }
 .audio-gate.is-opening .wax-seal { opacity: 0; transform: translate(-50%,-60%) scale(.72); }
 .audio-gate.is-opening { opacity: 0; visibility: hidden; transition-delay: .4s; }
 main { width: 100%; }
