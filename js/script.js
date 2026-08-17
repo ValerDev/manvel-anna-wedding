@@ -5,6 +5,7 @@ const MAP_URLS = {
 };
 
 const WEDDING_DATE = new Date("2026-09-04T00:00:00+04:00");
+const MUSIC_START_TIME = 20;
 
 document.querySelectorAll("[data-map]").forEach((link) => {
   link.href = MAP_URLS[link.dataset.map];
@@ -68,7 +69,10 @@ function syncMusicProgress() {
   musicDuration.textContent = formatTime(duration);
 }
 
-musicAudio.addEventListener("loadedmetadata", syncMusicProgress);
+musicAudio.addEventListener("loadedmetadata", () => {
+  if (musicAudio.currentTime < MUSIC_START_TIME) musicAudio.currentTime = MUSIC_START_TIME;
+  syncMusicProgress();
+});
 musicAudio.addEventListener("durationchange", syncMusicProgress);
 musicAudio.addEventListener("timeupdate", syncMusicProgress);
 musicAudio.addEventListener("play", () => {
@@ -104,6 +108,9 @@ window.addEventListener("touchstart", startMusicFromScroll, { passive: true });
 
 function attemptImmediatePlayback() {
   if (!musicAudio.paused) return;
+  if (musicAudio.readyState >= 1 && musicAudio.currentTime < MUSIC_START_TIME) {
+    musicAudio.currentTime = MUSIC_START_TIME;
+  }
   musicAudio.play().catch(() => {
     // Audible autoplay may be blocked; first touch/scroll remains the fallback.
   });
@@ -124,7 +131,7 @@ document.querySelectorAll("[data-music]").forEach((button) => {
     } else if (action === "shuffle") {
       button.classList.toggle("is-active");
     } else {
-      musicAudio.currentTime = 0;
+      musicAudio.currentTime = MUSIC_START_TIME;
       musicAudio.play();
     }
   });
