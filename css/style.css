@@ -23,7 +23,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 main { width: 100%; }
-.hero, .schedule, .signature { width: min(1180px, 92vw); margin-inline: auto; text-align: center; }
+.hero, .schedule, .date-section, .signature { width: min(1180px, 92vw); margin-inline: auto; text-align: center; }
 .hero { padding-top: clamp(26px, 4vw, 58px); }
 .rings { width: min(390px, 65vw); height: auto; }
 .save-date {
@@ -31,8 +31,10 @@ main { width: 100%; }
   margin: clamp(28px, 4vw, 52px) auto 0;
   line-height: 0;
 }
+.date-section { padding-top: clamp(45px, 6vw, 80px); }
 .save-date svg { display: block; width: 100%; height: auto; overflow: visible; }
 .save-date text { fill: var(--ink); font: 400 55px "Roboto", Arial, sans-serif; letter-spacing: -1.5px; }
+.welcome { margin-top: clamp(45px, 6vw, 78px); }
 .eyebrow { margin: 0 0 38px; color: #5e5d5a; font-size: clamp(.88rem, 1.7vw, 1.35rem); letter-spacing: .28em; }
 .armenian-heading { display: block; width: min(100%, 1050px); height: auto; margin: 0 auto 44px; }
 .invitation { margin: 0 auto 36px; color: var(--sage); font-size: clamp(1rem, 2vw, 1.45rem); font-weight: 300; }
@@ -88,10 +90,11 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
 @keyframes write { to { clip-path: inset(0); } }
 
 @media (max-width: 700px) {
-  .hero, .schedule, .signature { width: min(calc(100% - 32px), 520px); }
+  .hero, .schedule, .date-section, .signature { width: min(calc(100% - 32px), 520px); }
   .hero { padding-top: 18px; }
   .rings { width: min(330px, 78vw); }
   .save-date { width: min(350px, 86vw); margin-top: 22px; }
+  .date-section { padding-top: 42px; }
   .hero-countdown { width: 100%; margin: 10px auto 65px; }
   .eyebrow { margin-bottom: 28px; letter-spacing: .17em; }
   .armenian-heading { width: 100%; margin-bottom: 22px; }
@@ -119,7 +122,7 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
 }
 
 @media (max-width: 430px) {
-  .hero, .schedule, .signature { width: calc(100% - 28px); }
+  .hero, .schedule, .date-section, .signature { width: calc(100% - 28px); }
   .save-date text { font-size: 52px; letter-spacing: -1px; }
   .countdown-title { font-size: clamp(1.8rem, 8vw, 2.4rem); }
   .countdown-grid { gap: 4px; }
@@ -129,7 +132,7 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
 }
 
 @media (max-width: 360px) {
-  .hero, .schedule, .signature { width: calc(100% - 22px); }
+  .hero, .schedule, .date-section, .signature { width: calc(100% - 22px); }
   .eyebrow { font-size: .75rem; letter-spacing: .12em; }
   .countdown-kicker { font-size: .72rem; letter-spacing: .1em; }
   .events { gap: 56px; }
