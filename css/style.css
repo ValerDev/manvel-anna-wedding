@@ -131,9 +131,9 @@ main { width: 100%; }
 .signature.is-visible img { animation: write 2s cubic-bezier(.6,0,.25,1) forwards; }
 .closing-heart { display: block; width: min(920px, 92%); height: auto; margin: clamp(44px, 6vw, 72px) auto 0; overflow: visible; }
 .closing-heart path { fill: none; stroke: #a88977; stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 1; }
-.signature.is-visible .closing-heart path { animation: draw-closing-heart 2.4s cubic-bezier(.55,.05,.25,1) .45s forwards; }
+.signature.is-visible .closing-heart path { animation: draw-closing-heart 1.8s cubic-bezier(.55,.05,.25,1) .15s forwards; }
 .signature p { margin: 24px 0 0; color: #171614; font-size: clamp(.9rem, 1.7vw, 1.15rem); font-weight: 400; letter-spacing: .14em; opacity: 0; transform: translateY(12px); }
-.signature.is-visible p { animation: closing-message .8s ease 2.35s forwards; }
+.signature.is-visible p { animation: closing-message .65s ease .55s forwards; }
 .intro { opacity: 0; }
 body.loaded .intro-rings { animation: fade-in .7s ease forwards; }
 body.loaded .intro-title { animation: fade-up .7s ease .08s forwards; }
