@@ -33,18 +33,14 @@ main { width: 100%; }
 }
 .save-date svg { display: block; width: 100%; height: auto; overflow: visible; }
 .save-date text { fill: var(--ink); font: 400 55px "Roboto", Arial, sans-serif; letter-spacing: -1.5px; }
-.wedding-date {
-  margin: clamp(48px, 7vw, 92px) 0 clamp(62px, 8vw, 108px);
-  color: var(--taupe);
-  font: 400 clamp(4rem, 9vw, 7.8rem)/.8 "Italianno", cursive;
-  letter-spacing: .08em;
-}
 .eyebrow { margin: 0 0 38px; color: #5e5d5a; font-size: clamp(.88rem, 1.7vw, 1.35rem); letter-spacing: .28em; }
 .armenian-heading { display: block; width: min(100%, 1050px); height: auto; margin: 0 auto 44px; }
 .invitation { margin: 0 auto 36px; color: var(--sage); font-size: clamp(1rem, 2vw, 1.45rem); font-weight: 300; }
 .gift { margin: 0; font-size: clamp(1.05rem, 2vw, 1.6rem); font-weight: 600; }
-.countdown { width: min(720px, calc(100% - 32px)); margin: 0 auto clamp(70px, 8vw, 110px); text-align: center; }
-.countdown-label { margin: 0 0 24px; color: var(--sage); font-size: clamp(.75rem, 1.4vw, 1rem); letter-spacing: .18em; }
+.countdown { width: min(720px, calc(100% - 32px)); text-align: center; }
+.hero-countdown { margin: clamp(42px, 6vw, 75px) auto clamp(62px, 8vw, 108px); }
+.countdown-kicker { margin: 0 0 10px; color: var(--sage); font-size: clamp(.8rem, 1.5vw, 1.05rem); font-weight: 300; letter-spacing: .15em; }
+.countdown-title { margin: 0 0 28px; color: var(--taupe); font: 400 clamp(2.2rem, 5vw, 4rem)/1.05 "Noto Sans Armenian", sans-serif; }
 .countdown-grid { display: grid; grid-template-columns: repeat(4, minmax(75px, 135px)); justify-content: center; gap: clamp(8px, 2vw, 24px); }
 .countdown-grid div { padding: 17px 8px 14px; border-top: 1px solid var(--taupe); border-bottom: 1px solid var(--taupe); }
 .countdown-grid strong { display: block; color: var(--taupe); font: 300 clamp(1.75rem, 4vw, 3rem)/1 "Roboto", sans-serif; font-variant-numeric: tabular-nums; }
@@ -96,12 +92,11 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
   .hero { padding-top: 18px; }
   .rings { width: min(330px, 78vw); }
   .save-date { width: min(350px, 86vw); margin-top: 22px; }
-  .wedding-date { margin: 44px 0 65px; }
+  .hero-countdown { width: 100%; margin: 38px auto 65px; }
   .eyebrow { margin-bottom: 28px; letter-spacing: .17em; }
   .armenian-heading { width: 100%; margin-bottom: 22px; }
   .invitation { max-width: 340px; line-height: 1.9; }
   .gift { max-width: 350px; margin-inline: auto; line-height: 1.7; }
-  .countdown { margin-bottom: 65px; }
   .countdown-grid { grid-template-columns: repeat(4, 1fr); gap: 6px; }
   .countdown-grid div { padding-inline: 2px; }
   .couple { width: 100%; max-width: 520px; margin: 55px auto 0; }
@@ -126,7 +121,7 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
 @media (max-width: 430px) {
   .hero, .schedule, .signature { width: calc(100% - 28px); }
   .save-date text { font-size: 52px; letter-spacing: -1px; }
-  .wedding-date { font-size: clamp(3.7rem, 19vw, 5rem); letter-spacing: .045em; }
+  .countdown-title { font-size: clamp(1.8rem, 8vw, 2.4rem); }
   .countdown-grid { gap: 4px; }
   .countdown-grid strong { font-size: clamp(1.45rem, 7vw, 1.9rem); }
   .countdown-grid span { font-size: .62rem; }
@@ -136,7 +131,7 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
 @media (max-width: 360px) {
   .hero, .schedule, .signature { width: calc(100% - 22px); }
   .eyebrow { font-size: .75rem; letter-spacing: .12em; }
-  .countdown-label { font-size: .68rem; letter-spacing: .1em; }
+  .countdown-kicker { font-size: .72rem; letter-spacing: .1em; }
   .events { gap: 56px; }
   .event { padding-left: 41px; }
   .event::before { left: 1px; }
