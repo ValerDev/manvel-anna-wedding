@@ -108,15 +108,17 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
   .couple.reveal { transform: translateY(20px) scale(.96); }
   .couple.reveal.is-visible { transform: scale(1); }
   .schedule { padding-top: 28px; }
-  .events { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
-  .event { min-width: 0; }
-  .event img { width: 100%; height: clamp(78px, 24vw, 115px); }
-  .event .time { margin: 12px 0 7px; font-size: clamp(.58rem, 2.35vw, .72rem); white-space: nowrap; }
-  .event p:not(.time) { min-height: 48px; margin-bottom: 10px; font-size: clamp(.48rem, 1.85vw, .61rem); line-height: 1.65; }
-  .map-button { width: 100%; min-height: 32px; gap: 3px; padding: 4px 2px; font-size: clamp(.43rem, 1.7vw, .57rem); white-space: nowrap; }
-  .pin-icon { width: 13px; height: 13px; }
-  .timeline { display: flex; width: 82%; margin-top: 27px; }
-  .heart { font-size: 14px; }
+  .events { display: flex; flex-direction: column; gap: 64px; }
+  .event { position: relative; width: 100%; padding-left: 48px; align-items: stretch; text-align: left; }
+  .event::before { content: "♥"; position: absolute; left: 5px; top: 76px; z-index: 1; color: var(--line); font-size: 22px; }
+  .event::after { content: ""; position: absolute; left: 15px; top: 98px; bottom: -78px; width: 1px; background: var(--line); }
+  .event:last-child::after { display: none; }
+  .event img { width: 100%; height: 155px; object-position: left center; }
+  .event .time { margin: 16px 0 9px; font-size: 1rem; white-space: nowrap; }
+  .event p:not(.time) { min-height: 0; margin-bottom: 18px; font-size: .9rem; line-height: 1.8; }
+  .map-button { width: 100%; max-width: none; min-height: 58px; gap: 10px; padding: 10px 14px; font-size: .88rem; white-space: normal; }
+  .pin-icon { width: 18px; height: 18px; }
+  .timeline { display: none; }
   .signature { padding: 38px 0 52px; }
   .signature img { width: 88%; }
 }
@@ -135,8 +137,10 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
   .hero, .schedule, .signature { width: calc(100% - 22px); }
   .eyebrow { font-size: .75rem; letter-spacing: .12em; }
   .countdown-label { font-size: .68rem; letter-spacing: .1em; }
-  .events { gap: 5px; }
-  .map-button { letter-spacing: -.02em; }
+  .events { gap: 56px; }
+  .event { padding-left: 41px; }
+  .event::before { left: 1px; }
+  .event::after { left: 11px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
