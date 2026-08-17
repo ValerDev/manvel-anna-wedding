@@ -27,11 +27,12 @@ main { width: 100%; }
 .hero { padding-top: clamp(26px, 4vw, 58px); }
 .rings { width: min(390px, 65vw); height: auto; }
 .save-date {
-  margin: clamp(28px, 4vw, 52px) 0 0;
-  font: 400 clamp(2rem, 4.4vw, 4.05rem)/1 "Roboto", sans-serif;
-  letter-spacing: -.035em;
-  transform: rotate(3deg);
+  width: min(520px, 78vw);
+  margin: clamp(28px, 4vw, 52px) auto 0;
+  line-height: 0;
 }
+.save-date svg { display: block; width: 100%; height: auto; overflow: visible; }
+.save-date text { fill: var(--ink); font: 400 55px "Roboto", Arial, sans-serif; letter-spacing: -1.5px; }
 .wedding-date {
   margin: clamp(48px, 7vw, 92px) 0 clamp(62px, 8vw, 108px);
   color: var(--taupe);
@@ -84,7 +85,7 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
 .couple.reveal { transform: translateY(20px) scale(.96); }
 .couple.reveal.is-visible { transform: scale(1); }
 @keyframes fade-in { to { opacity: 1; } }
-@keyframes fade-up { to { opacity: 1; transform: rotate(3deg) translateY(0); } from { opacity: 0; transform: rotate(3deg) translateY(18px); } }
+@keyframes fade-up { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(18px); } }
 @keyframes reveal-date { from { opacity: 0; clip-path: inset(0 100% 0 0); } to { opacity: 1; clip-path: inset(0); } }
 @keyframes draw-line { to { transform: scaleX(1); } }
 @keyframes heart-in { to { opacity: 1; transform: scale(1); } }
@@ -94,7 +95,7 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
   .hero, .schedule, .signature { width: min(calc(100% - 32px), 520px); }
   .hero { padding-top: 18px; }
   .rings { width: min(330px, 78vw); }
-  .save-date { margin-top: 22px; }
+  .save-date { width: min(350px, 86vw); margin-top: 22px; }
   .wedding-date { margin: 44px 0 65px; }
   .eyebrow { margin-bottom: 28px; letter-spacing: .17em; }
   .armenian-heading { width: 100%; margin-bottom: 22px; }
@@ -122,7 +123,7 @@ body.loaded .intro-date { animation: reveal-date .8s ease .18s forwards; }
 
 @media (max-width: 430px) {
   .hero, .schedule, .signature { width: calc(100% - 28px); }
-  .save-date { font-size: clamp(1.85rem, 9vw, 2.35rem); }
+  .save-date text { font-size: 52px; letter-spacing: -1px; }
   .wedding-date { font-size: clamp(3.7rem, 19vw, 5rem); letter-spacing: .045em; }
   .countdown-grid { gap: 4px; }
   .countdown-grid strong { font-size: clamp(1.45rem, 7vw, 1.9rem); }
